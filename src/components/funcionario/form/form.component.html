@@ -1,0 +1,13 @@
+<form class="containerForm" [formGroup]="formulario">
+    <div class="containerInput">
+        <label for="nome">Nome</label>
+        <input formControlName="nome" name="nome" type="text">    
+    </div>
+    
+    <div class="containerInput">
+        <label for="age_nasc">Nascido em</label>
+        <input name="age_nasc" formControlName="age_nasc" type="date">    
+    </div>    
+</form>
+
+<button (click)="this.createFuncionario()" >Cadastrar</button>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="menu">
+
+        <div class="logo">PIMENTA</div>
+    
+        <div class="module" (click)="this.showContent('funcionario',true)" >Cadastrar um novo Funcionario</div>
+        <div class="module m2" (click)="this.showContent('planta',true)" >Cadastrar uma nova Planta</div>
+        <div class="module" (click)="this.showContent('canteiro',true)">Cadastrar um novo Canteiro</div>
+        <div class="module m2" (click)="this.showContent('plantio',true)" >Cadastrar um novo Plantio</div>
+        <div class="module" (click)="this.showContent('colheita',true)" >Cadastrar uma nova Colheita</div>
+    
+    </div>
+    
+    <div class="content">
+    
+        <div *ngIf="showFuncionarioForm == true" >
+            <funcionario-form></funcionario-form>
+        </div>
+    
+    </div>
+</div>
