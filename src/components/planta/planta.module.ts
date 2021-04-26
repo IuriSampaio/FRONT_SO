@@ -2,7 +2,6 @@ import { PlantaComponent } from './planta.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FuncionarioModule } from '../funcionario/funcionario.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +10,7 @@ import { FuncionarioModule } from '../funcionario/funcionario.module';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
-    FuncionarioModule
+    ReactiveFormsModule
   ],
   exports:[
     PlantaComponent

@@ -42,9 +42,9 @@ export class HomeComponent {
             this.showFunionarios= false;
         }else if(witch==="canteiro"&& isForm){
             this.showFuncionarioForm = false;
-            this.showCanteinroForm = false;
+            this.showCanteinroForm = true;
             this.showColhidoForm =false;
-            this.showPlantaForm = true;
+            this.showPlantaForm = false;
             this.showPlantioForm = false;
             this.showFunionarios= false;
         }else if(witch==="colhido"&& isForm){

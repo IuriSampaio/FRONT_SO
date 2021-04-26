@@ -1,0 +1,22 @@
+<div>
+    <h1>Cadastrar Canteiros</h1>
+    <form class="containerForm" [formGroup]="formulario">
+        <div class="containerInput">
+            <label for="nome">Nome</label>
+            <input formControlName="nome" name="nome" type="text">    
+        </div>
+        
+        <div class="containerInput">
+            <label for="luz_diaria">Luz diaria</label>
+            <input name="luz_diaria" formControlName="luz_diaria" type="number" placeholder="em Horas">    
+        </div>
+        
+        <div class="containerInput">
+            <label for="agua_diaria">Agua diaria</label>
+            <input formControlName="agua_diaria" placeholder="em Litros" name="agua_diaria" type="number">    
+        </div>
+
+    </form>
+    
+    <button (click)="this.createCanteiro()" >Cadastrar</button>
+</div> 

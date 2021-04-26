@@ -1,1 +1,27 @@
-<h1>Cadastrar uma planta</h1>
+<div>
+    <h1>Cadastrar Plantas</h1>
+    <form class="containerForm" [formGroup]="formulario">
+        <div class="containerInput">
+            <label for="nome">Nome</label>
+            <input formControlName="nome" name="nome" type="text">    
+        </div>
+        
+        <div class="containerInput">
+            <label for="daily_ligth">Luz diaria</label>
+            <input name="daily_ligth" formControlName="daily_ligth" type="number" placeholder="em Horas">    
+        </div>
+        
+        <div class="containerInput">
+            <label for="agua">Agua diaria</label>
+            <input formControlName="agua" placeholder="em Litros" name="agua" type="number">    
+        </div>
+        
+        <div class="containerInput">
+            <label for="peso">Peso</label>
+            <input formControlName="peso" placeholder="em Kilogramas" name="peso" type="number">    
+        </div>
+
+    </form>
+    
+    <button (click)="this.createPlanta()" >Cadastrar</button>
+</div> 

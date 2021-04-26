@@ -13,9 +13,21 @@
     
     <div class="content">
     
-        <div *ngIf="showFuncionarioForm == true" >
+        <div *ngIf="this.showFuncionarioForm" >
             <funcionario-form></funcionario-form>
         </div>
-    
+
+        <div *ngIf="this.showPlantaForm">
+            <planta-form></planta-form>
+        </div>
+        
+        <div *ngIf="this.showCanteinroForm" >
+            <canteiro-form></canteiro-form>
+        </div>
+
+        <div *ngIf="this.showPlantioForm">
+            <plantio-form></plantio-form>
+        </div>
+
     </div>
 </div>
