@@ -1,0 +1,40 @@
+<div>
+    <h1>Cadastrar Colheita</h1>
+    <form class="containerForm" [formGroup]="formulario">
+        <div class="containerInput">
+            <label for="peso">Peso da Colheita</label>
+            <input formControlName="peso" name="peso" type="number" (change)="notNegative()">    
+        </div>
+        
+        <div class="containerInput">
+            <label for="qtd">Quantidade da colheita</label>
+            <input name="qtd" formControlName="qtd" type="number" (change)="notNegative()" >    
+        </div>
+        
+        <div class="containerInput">
+            <label>Qual planta foi plantada</label>
+            <select formControlName="planta_id" >
+                <option [ngValue]="null" disabled selected > Selecione a planta plantada </option>
+                <option *ngFor="let plant of plantas" [ngValue]="plant.id" >{{plant.nome}}</option>
+            </select>
+        </div>
+
+        <div class="containerInput">
+            <label>Em qual canteiro foi plantada</label>
+            <select formControlName='canteiro_id'>
+                <option [ngValue]="null" disabled selected > Selecione em qual canteiro foi plantada </option>
+                <option *ngFor="let plant of canteiros" [ngValue]="plant.id" >{{plant.nome}}</option>
+            </select>
+        </div>
+
+        <div class="containerInput">
+            <label>Qual funcionario plantou</label>
+            <select formControlName="funcionario_id">
+                <option [ngValue]="null" disabled selected > Selecione o funcionario que plantou </option>
+                <option *ngFor="let plant of funcionarios" [ngValue]="plant.id" >{{plant.nome}}</option>
+            </select>
+        </div>
+
+    </form>
+    <button (click)="this.createPlantio()" >Cadastrar</button>
+</div> 

@@ -1,15 +1,23 @@
 .container{
     display: flex;
-    flex-direction: row;
-    flex:1
+    flex-direction: row;    
+    flex:1;
+    align-items: center;
+    justify-content: space-between;
 }
 
 div.menu{
     width: 20%;
-    background-color: gainsboro;
+    background-color: #232323;
+    color: #ede;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
- 
+    font-size: 1.1em;
     .logo{
+        img{
+            width: 50px;
+        }
         height: 70px;
         display: flex;
         justify-content: center;
@@ -17,19 +25,21 @@ div.menu{
     }
 
     .module{
-        font:200 1rem arial;
         width: 100%;
-        height: 50px;
-        background-color: gray;
+        height: 70px;
+        background-color: #d45444;
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
     }
     .m2{
-        background-color: gold;
+        background-color: #34948c;
     }
 }
 .content{
-    width: 100%;
+    width: 70%;
+    height: 90vh;
+    margin-right: 5%;
+    padding: 10px;
 }

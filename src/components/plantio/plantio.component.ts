@@ -70,5 +70,11 @@ export class PlantioComponent{
         }
     }
 
+    notNegative( ){
+        const sementes = Number(this.formulario.value.sementes.toString().replace("-",""));
 
+        this.formulario.get('sementes').setValue(sementes)
+    }
+
+    
 }

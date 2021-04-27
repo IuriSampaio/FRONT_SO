@@ -1,0 +1,48 @@
+.containerForm{
+    width:100%;
+    height: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex:1;
+
+    .containerInput{
+        display: flex;
+        flex: 1;
+        width: 80%;
+        flex-direction: column;
+        margin-top: 10px;
+
+        label{
+            font:700 1rem arial;
+        }
+        input,select{
+            height: 2em;
+            font:200 0.9rem arial;
+            outline:none;
+            border-radius: 5px;
+            background-color:#fafafa;
+            border:0.1px solid #232323;
+            padding: 2px;
+        }
+    }
+}
+button{
+    width: 50%;   
+    font-size:1.3em;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-left: 25%;
+
+
+    background-color: #232323;
+    color: #d45444;}
+h1 {
+    font-size: xx-large;
+    color: #d45444;
+    font-family: Arial, Helvetica, sans-serif;
+}

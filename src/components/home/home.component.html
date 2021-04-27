@@ -1,18 +1,59 @@
 <div class="container">
     <div class="menu">
 
-        <div class="logo">PIMENTA</div>
+        <div class="logo" (click)="this.showContent('default',false)" > <img src="../../assets/pimenta.svg"> </div>
     
-        <div class="module" (click)="this.showContent('funcionario',true)" >Cadastrar um novo Funcionario</div>
-        <div class="module m2" (click)="this.showContent('planta',true)" >Cadastrar uma nova Planta</div>
-        <div class="module" (click)="this.showContent('canteiro',true)">Cadastrar um novo Canteiro</div>
-        <div class="module m2" (click)="this.showContent('plantio',true)" >Cadastrar um novo Plantio</div>
-        <div class="module" (click)="this.showContent('colheita',true)" >Cadastrar uma nova Colheita</div>
+        <div class="module" (click)="this.showContent('funcionario',true)" (dblclick)="this.showContent('default',false)" >Cadastrar um novo Funcionario</div>
+        <div class="module m2" (click)="this.showContent('planta',true)" (dblclick)="this.showContent('default',false)" >Cadastrar uma nova Planta</div>
+        <div class="module" (click)="this.showContent('canteiro',true)" (dblclick)="this.showContent('default',false)" >Cadastrar um novo Canteiro</div>
+        <div class="module m2" (click)="this.showContent('plantio',true)" (dblclick)="this.showContent('default',false)" >Cadastrar um novo Plantio</div>
+        <div class="module" (click)="this.showContent('colhido',true)" (dblclick)="this.showContent('default',false)" >Cadastrar uma nova Colheita</div>
     
     </div>
     
     <div class="content">
     
+        <div *ngIf="this.showDefault" >
+            <h1>PIMENTA</h1>            
+                <br>
+                <h2>Plantios</h2>
+                    <div *ngFor="let plantio of plantios">
+                        A planta 
+                            <strong>{{plantio.planta.nome}}</strong> com 
+                            <strong>{{plantio.sementes}}</strong> 
+                            {{plantio.sementes == 1 ? 'semente' :"sementes"}}  foi plantada no canteiro 
+                            <strong>{{plantio.canteiro.nome}}</strong> pelo funcionario 
+                            <strong>{{plantio.funcionario.nome}}</strong> no dia 
+                            <strong>{{plantio.data.slice('T')}}</strong> e está recebendo <strong>{{plantio.canteiro.daily_ligth.replace(',','.')}}</strong> horas de luz por dia e devia receber <strong>{{plantio.planta.daily_ligth.replace(',','.')}}</strong> 
+                    </div>
+                <br>
+
+                <h2>Colheitas</h2>
+
+                    <div *ngFor="let colheita of colheitas" >
+                        A planta 
+                        <strong>{{colheita.planta.nome}}</strong> com 
+                        <strong>{{colheita.peso}}Kg</strong> 
+                        foi colhida do canteiro 
+                        <strong>{{colheita.canteiro.nome}}</strong> pelo funcionario 
+                        <strong>{{colheita.funcionario.nome}}</strong> no dia 
+                        <strong>{{colheita.createdAt}}</strong> 
+                    </div>
+
+                <br>
+
+                <h2>Funcionarios</h2>
+
+                    <div *ngFor="let funcionario of funcionarios" >
+                        {{funcionario.nome}}
+                            <strong *ngIf="funcionario.plantios.length !== 0"> ja fez {{funcionario.plantios.length}} plantios </strong>
+                            <strong *ngIf="funcionario.plantios.length === 0" >Nunca criou nenhum plantio</strong>
+                            e
+                            <strong *ngIf="funcionario.colheita.length !== 0" > ja fez {{funcionario.colheita.length}} colheitas </strong>
+                            <strong *ngIf="funcionario.colheita.length === 0">Nunca fez nenhuma colheita</strong>
+                    </div>
+        </div>
+
         <div *ngIf="this.showFuncionarioForm" >
             <funcionario-form></funcionario-form>
         </div>
@@ -29,5 +70,8 @@
             <plantio-form></plantio-form>
         </div>
 
+        <div *ngIf="this.showColhidoForm" >
+            <colheita-form></colheita-form>
+        </div>
     </div>
 </div>

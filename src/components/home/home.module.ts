@@ -1,3 +1,4 @@
+import { ColheitaModule } from './../colheita/colheita.module';
 import { PlantioModule } from './../plantio/plantio.module';
 import { CanteiroModule } from './../canteiro/canteiro.module';
 import { PlantaModule } from './../planta/planta.module';
@@ -18,7 +19,8 @@ import { FuncionarioModule } from '../funcionario/funcionario.module';
     FuncionarioModule,
     PlantaModule,
     CanteiroModule,
-    PlantioModule
+    PlantioModule,
+    ColheitaModule
   ],
   exports:[
     HomeComponent
